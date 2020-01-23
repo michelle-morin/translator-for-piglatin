@@ -2,32 +2,36 @@
 
 function pigLatin(str) {
   var array = str.split("");
-  array.forEach(function(element) {
-    if (isNaN(element) === false) {
-      element = element;
-    } else if (array.length === 1 && (array[0] === "a" || array[0] === "i" || array[0] === "A" || array[0] === "I")) {
-      array.push("ay");
-    }
-  })
+  var words = str.split(" ");
+  if (array.length === 1 && (array[0] === "a" || array[0] === "i")) {
+    array.push("ay");
+    return array;
+  } else if (array.length === 1 && isNaN(parseInt(str)) === false) {
+    return array;
+  } else if (array.length > 1) {
+    for (index = 0; index < array.length; index += 1) {
+      if (isNaN(array[index]) === false) {
+        array[index] = array[index];
+      } else if (words.length === 1 && (array[0] === "a" || array[0] === "e" || array[0] === "i" || array[0] === "o" || array[0] === "u")) {
+        array.push("ay");
+      } 
+    return array;
+  }
 }
+
 
 // Front-end logic:
 
 $(document).ready(function () {
   $("form").submit(function (event) {
     event.preventDefault();
-    var sentenceInput = $("input#sentence").val();
+    var sentenceInput = $("input#sentence").val().toLowerCase();
 
-    pigLatin(sentenceInput);
-    var newSentence = array.join("");
     
-    // array.forEach(function (element) {
-    //   if (isNaN(element) === false) {
-    //     element = element;
-    //   } else if (sentence === "a" || sentence === "i" || sentence === "A" || sentence === "I") {
-    //     sentence = sentence + "ay";
-    //   } 
-    // });
+    var newArray = pigLatin(sentenceInput);
+    console.log(newArray);
+    var newSentence = newArray.join("").toLowerCase();;
+    
     $("#output").text(newSentence).show();
   });
 });
