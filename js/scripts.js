@@ -3,6 +3,8 @@
 function pigLatin(str) {
   var array = str.split("");
   var words = str.split(" ");
+  var consonants = ["q", "w", "r", "t", "y", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
+  var vowels = ["a", "i", "e", "o", "u"];
   if (array.length === 1 && (array[0] === "a" || array[0] === "i")) {
     array.push("ay");
     return array;
@@ -12,11 +14,19 @@ function pigLatin(str) {
     for (index = 0; index < array.length; index += 1) {
       if (isNaN(array[index]) === false) {
         array[index] = array[index];
-      } else if (words.length === 1 && (array[0] === "a" || array[0] === "e" || array[0] === "i" || array[0] === "o" || array[0] === "u")) {
+      } else if (words.length === 1 && (vowels.includes(array[0]))) {
         array.push("ay");
+      } else if (words.length === 1 && (consonants.includes(array[0]))) {
+        var firstLetter = array.shift();
+        console.log(firstLetter);
+        array.push(firstLetter);
+        console.log(array);
+        array.push("ay");
+        console.log(array);
       } 
+     }
     return array;
-  }
+    }
 }
 
 
