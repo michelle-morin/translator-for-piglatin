@@ -15,7 +15,7 @@ function pigLatin(str) {
     array.push("ay");
   } else if (words.length === 1 && consonants.includes(array[0])) {
     var cloneArray = array.slice();
-    for (index = 0; consonants.includes(array[index]); index += 1) {
+    for (var index = 0; consonants.includes(array[index]); index += 1) {
       var firstLetter = cloneArray.shift();
       cloneArray.push(firstLetter);
     }
@@ -25,30 +25,24 @@ function pigLatin(str) {
     var cloneArray = array.slice();
     var firstLetter = cloneArray.shift();
     cloneArray.push(firstLetter);
-    console.log(cloneArray);
-    for (index = 1; consonants.includes(array[index]); index += 1) {
+    for (var index = 1; consonants.includes(array[index]); index += 1) {
       var nextLetter = cloneArray.shift();
-      console.log(nextLetter);
       cloneArray.push(nextLetter);
-      console.log(cloneArray);
     }
     cloneArray.push("ay");
     return cloneArray;
   }
 }   
 
-
-
 // Front-end logic:
 
-$(document).ready(function () {
-  $("form").submit(function (event) {
+$(document).ready(function() {
+  $("form").submit(function(event) {
     event.preventDefault();
     var sentenceInput = $("input#sentence").val().toLowerCase();
 
-    
     var newArray = pigLatin(sentenceInput);
-    console.log(newArray);
+
     var newSentence = newArray.join("").toLowerCase();;
     
     $("#output").text(newSentence).show();
