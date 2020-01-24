@@ -66,7 +66,7 @@ $(document).ready(function() {
     var pigLatinSentence = pigLatinArray.join(" ").toLowerCase();;
     
     $("#output").show();
-    $(".piglatin").text(pigLatinSentence);
-    $(".phrase").text(sentenceInput.join(" "));
+    $("#piglatin").text(pigLatinSentence);
+    $("#phrase").text(sentenceInput.join(" "));
   });
 });

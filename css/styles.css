@@ -27,6 +27,16 @@ button:hover {
   border: 2px solid #111111;
 }
 
+#phrase {
+  color: #0f0781;
+  font-weight: bold;
+}
+
+#piglatin {
+  color: #013b2a;
+  font-weight: bold;
+}
+
 #output {
   display: none;
 }
