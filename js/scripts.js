@@ -13,7 +13,17 @@ function pigLatin(str) {
     return array;
   } else if (words.length === 1 && vowels.includes(array[0])) {
     array.push("ay");
-  } else if (words.length === 1 && consonants.includes(array[0])) {
+  } else if (words.length === 1 && consonants.includes(array[0]) && str.includes("qu")) {
+    var cloneArray = array.slice();
+    for (var index = 0; consonants.includes(array[index]); index += 1) {
+      var firstLetter = cloneArray.shift();
+      cloneArray.push(firstLetter);
+    } 
+      var letterU = cloneArray.shift();
+      cloneArray.push(letterU);
+      cloneArray.push("ay");
+      return cloneArray;
+    } else if (words.length === 1 && consonants.includes(array[0])) {
     var cloneArray = array.slice();
     for (var index = 0; consonants.includes(array[index]); index += 1) {
       var firstLetter = cloneArray.shift();
