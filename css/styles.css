@@ -7,6 +7,15 @@ body {
 .jumbotron {
   text-align: center;
   border: 2px solid #111111;
+  background-image: url(../img/yellow.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jumbotron h3 {
+  color: #1306cc;
+  font-weight: bold;
 }
 
 button {
@@ -25,18 +34,26 @@ button:hover {
 
 .well {
   border: 2px solid #111111;
+  background-image: url(../img/paper.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#phrase {
-  color: #0f0781;
-  font-weight: bold;
+label {
+  font-size: 30px;
 }
 
-#piglatin {
-  color: #013b2a;
+#phrase, #piglatin {
+  color: #1306cc;
   font-weight: bold;
 }
 
 #output {
   display: none;
+  border: 2px solid #111111;
+  background-image: url(../img/yellow.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
