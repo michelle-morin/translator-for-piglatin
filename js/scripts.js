@@ -4,7 +4,7 @@ function pigLatin(str) {
   var wordArray = str.split("");
   var consonants = ["q", "w", "r", "t", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
   var vowels = ["a", "i", "e", "o", "u"];
-
+  
   if (wordArray.length === 1 && (wordArray[0] === "a" || wordArray[0] === "i")) {
   wordArray.push("ay");
   var outputWord = wordArray.join("");
@@ -56,7 +56,7 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     var sentenceInput = $("input#sentence").val().toLowerCase().split(" ");
-
+    
     var pigLatinArray = [];
     sentenceInput.forEach(function(word) {
       var pigLatinWord = pigLatin(word);
