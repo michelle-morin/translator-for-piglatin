@@ -44,7 +44,9 @@ function pigLatin(str) {
       cloneArray.push("ay");
       return cloneArray;
     }
-  } 
+  } else if (words.length > 1) {
+    alert("please only enter one word; my logic is broken!");
+  }
 }
 
 // Front-end logic:
