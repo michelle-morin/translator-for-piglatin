@@ -21,8 +21,8 @@ _This webpage includes a form to obtain an input of a string. jQuery is used to 
 * _Input: cat_
 * _Output: atc_
 5. _Behavior: The program moves all initial consonants of a word to the end of the word._
-* _Input: cheat/brr_
-* _Output: eatch/rrb_
+* _Input: cheat_
+* _Output: eatch_
 6. _Behavior: The program adds "ay" to the end of a word after moving all consonants to the end._
 * _Input: cat_
 * _Output: atcay_
